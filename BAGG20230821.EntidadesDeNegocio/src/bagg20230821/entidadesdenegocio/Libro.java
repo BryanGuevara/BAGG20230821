@@ -5,15 +5,17 @@ public class Libro {
  public String Titulo;
  public String Autor;
  public String Anio;
+ public int Top_aux;
 
     public Libro() {
     }
 
-    public Libro(int ID, String Titulo, String Autor, String Anio) {
+    public Libro(int ID, String Titulo, String Autor, String Anio, int Top_aux) {
         this.ID = ID;
         this.Titulo = Titulo;
         this.Autor = Autor;
         this.Anio = Anio;
+        this.Top_aux = Top_aux;
     }
 
     public int getID() {
@@ -47,5 +49,12 @@ public class Libro {
     public void setAnio(String Anio) {
         this.Anio = Anio;
     }
- 
+    
+   public int getTop_aux() {
+        return Top_aux;
+    }
+
+    public void setTop_aux(int Top_aux) {
+        this.Top_aux = Top_aux;
+    }
 }
