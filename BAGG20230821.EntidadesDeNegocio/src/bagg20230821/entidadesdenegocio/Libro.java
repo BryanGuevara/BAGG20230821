@@ -1,60 +1,52 @@
 package bagg20230821.entidadesdenegocio;
 
 public class Libro {
- public int ID;
- public String Titulo;
- public String Autor;
- public String Anio;
- public int Top_aux;
+
+    private int id;
+    private String titulo;
+    private String autor;
+    private String anio;
 
     public Libro() {
     }
 
-    public Libro(int ID, String Titulo, String Autor, String Anio, int Top_aux) {
-        this.ID = ID;
-        this.Titulo = Titulo;
-        this.Autor = Autor;
-        this.Anio = Anio;
-        this.Top_aux = Top_aux;
+    public Libro(int id, String titulo, String autor, String anio) {
+        this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anio = anio;
     }
 
-    public int getID() {
-        return ID;
+    // Getters y setters
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitulo() {
-        return Titulo;
+        return titulo;
     }
 
-    public void setTitulo(String Titulo) {
-        this.Titulo = Titulo;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getAutor() {
-        return Autor;
+        return autor;
     }
 
-    public void setAutor(String Autor) {
-        this.Autor = Autor;
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     public String getAnio() {
-        return Anio;
+        return anio;
     }
 
-    public void setAnio(String Anio) {
-        this.Anio = Anio;
-    }
-    
-   public int getTop_aux() {
-        return Top_aux;
-    }
-
-    public void setTop_aux(int Top_aux) {
-        this.Top_aux = Top_aux;
+    public void setAnio(String anio) {
+        this.anio = anio;
     }
 }
