@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PÃ¡gina de Inicio</title>
+    <title>Página de Inicio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -48,7 +48,7 @@
         <h1>Bienvenido a la Biblioteca</h1>
     </header>
     <div class="container">
-        <p>Selecciona una opciÃ³n:</p>
+        <p>Selecciona una opción:</p>
         <a href="registro-libro.jsp" class="btn">Ir al Registro de Libro</a>
         <a href="lista-libros.jsp" class="btn">Ver Lista de Libros Registrados</a>
     </div>

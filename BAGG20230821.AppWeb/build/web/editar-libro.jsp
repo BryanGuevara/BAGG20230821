@@ -76,6 +76,6 @@
         <button type="submit">Guardar Cambios</button>
     </form>
     <br>
-    <a href="lista-libros.jsp">Volver a la Lista de Libros</a>
+    <a href="lista-libros.jsp">[ Volver a la Lista de Libros ]</a>
 </body>
 </html>

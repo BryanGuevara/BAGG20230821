@@ -68,17 +68,18 @@
     </head>
     <body>
         <h1>Registro de Libro</h1>
-        <form action="LibroServlet" method="doPost">
+        <p> <form action="LibroServlet" method="post">
             <label>Título:</label>
             <input type="text" name="titulo" required><br>
             <label>Autor:</label>
             <input type="text" name="autor" required><br>
             <label>Año:</label>
             <input type="text" name="anio" required><br>
+            </p>
             <p>
-                <button type="submit">Registrar Libro Nuevo</button>
+                <button type="submit">[ Registrar Libro Nuevo ]</button>
             </p>
         </form>
-        <a href="index.html" class="btn">Volver a la Página de Inicio</a>
+        <a href="index.jsp" class="btn">[ Volver a la Página de Inicio ]</a>
     </body>
 </html>

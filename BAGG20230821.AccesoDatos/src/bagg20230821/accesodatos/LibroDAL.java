@@ -1,3 +1,4 @@
+package bagg20230821.accesodatos;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -6,17 +7,17 @@ import bagg20230821.entidadesdenegocio.Libro;
 
 public class LibroDAL {
 
-    private static final String JDBC_URL = "jdbc:mysql://localhost:8080/Libro";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3307/libro";
     private static final String JDBC_USER = "root";
     private static final String JDBC_PASSWORD = "";
 
     public List<Libro> obtenerTodos() {
         List<Libro> libros = new ArrayList<>();
         try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
-            String query = "SELECT * FROM Libros";
+            String query = "SELECT * FROM libros;";
             try (PreparedStatement statement = connection.prepareStatement(query); ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    int id = resultSet.getInt("ID");
+                    int id = resultSet.getInt("Id");
                     String titulo = resultSet.getString("Titulo");
                     String autor = resultSet.getString("Autor");
                     String anio = resultSet.getString("Anio");
@@ -31,13 +32,14 @@ public class LibroDAL {
 
     public void crearLibro(Libro libro) {
         try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
-            String query = "INSERT INTO Libros (Titulo, Autor, Anio) VALUES (?, ?, ?)";
+            String query = "INSERT INTO libros (Titulo, Autor, Anio) VALUES (?, ?, ?);";
             try (PreparedStatement statement = connection.prepareStatement(query)) {
                 statement.setString(1, libro.getTitulo());
                 statement.setString(2, libro.getAutor());
                 statement.setString(3, libro.getAnio());
                 statement.executeUpdate();
             }
+            System.out.println("Titulo: " + libro.getTitulo() + " Autor: " + libro.getAutor() + " Año: " + libro.getAnio());
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -45,7 +47,7 @@ public class LibroDAL {
 
     public void actualizarLibro(Libro libro) {
         try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
-            String query = "UPDATE Libros SET Titulo = ?, Autor = ?, Anio = ? WHERE ID = ?";
+            String query = "UPDATE libros SET Titulo = ?, Autor = ?, Anio = ? WHERE Id = ?";
             try (PreparedStatement statement = connection.prepareStatement(query)) {
                 statement.setString(1, libro.getTitulo());
                 statement.setString(2, libro.getAutor());
@@ -60,7 +62,7 @@ public class LibroDAL {
 
     public void eliminarLibro(int id) {
         try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
-            String query = "DELETE FROM Libros WHERE ID = ?";
+            String query = "DELETE FROM libros WHERE Id = ?";
             try (PreparedStatement statement = connection.prepareStatement(query)) {
                 statement.setInt(1, id);
                 statement.executeUpdate();
@@ -72,7 +74,7 @@ public class LibroDAL {
 
     public Libro obtenerPorId(int id) {
         try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
-            String query = "SELECT * FROM Libros WHERE ID = ?";
+            String query = "SELECT * FROM libros WHERE Id = ?";
             try (PreparedStatement statement = connection.prepareStatement(query)) {
                 statement.setInt(1, id);
                 try (ResultSet resultSet = statement.executeQuery()) {

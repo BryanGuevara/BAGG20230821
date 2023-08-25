@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>LibroServlet</servlet-name>
-        <servlet-class>com.example.LibroServlet</servlet-class>
+        <servlet-class>controller.LibroServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

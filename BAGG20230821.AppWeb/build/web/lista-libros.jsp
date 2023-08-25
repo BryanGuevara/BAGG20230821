@@ -71,11 +71,11 @@
                         <a href="editar-libro.jsp?id=${libro.id}">Editar</a>
                     </td>
                     <td>
-                        <a href="elmiinar-libro.jsp?id=${libro.id}">Eliminar</a>
+                        <a href="eliminar-libro.jsp?id=${libro.id}">Eliminar</a>
                     </td>
                 </tr>
             </c:forEach>
         </table>
-        <a href="index.html">[ Volver a la Página de Inicio ]</a>
+        <a href="index.jsp">[ Volver a la Página de Inicio ]</a>
     </body>
 </html>

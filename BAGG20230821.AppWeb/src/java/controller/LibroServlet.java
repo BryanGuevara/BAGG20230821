@@ -1,5 +1,7 @@
+package controller;
 
 import bagg20230821.entidadesdenegocio.Libro;
+import bagg20230821.accesodatos.LibroDAL;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import java.io.IOException;
@@ -22,7 +24,6 @@ public class LibroServlet extends HttpServlet {
                     request.getRequestDispatcher("editar-libro.jsp").forward(request, response);
                     break;
 
-                // Agrega más casos para otras acciones si es necesario
                 default:
                     mostrarListaLibros(request, response);
                     break;
@@ -50,7 +51,6 @@ public class LibroServlet extends HttpServlet {
                     int id = Integer.parseInt(request.getParameter("id"));
                     libroDAL.eliminarLibro(id);
                     break;
-
             }
         }
 
